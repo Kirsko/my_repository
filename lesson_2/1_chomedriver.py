@@ -1,7 +1,5 @@
 import time
-#просто комментарий для удаленки
-#просто 
-#человек
+
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
@@ -26,4 +24,3 @@ time.sleep(4)
 driver.refresh()
 time.sleep(3)
 
-#newbranchline
