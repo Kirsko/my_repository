@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "e20d91a3-3e03-4ce5-a517-a8456dbbfe33",
+		"name": "User create",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "40582154"
+	},
+	"item": [
+		{
+			"name": "CreateWithArray",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"id\":228,\r\n    \"username\": \"Lox\",\r\n    \"firstName\": \"Chmo\",\r\n    \"lastName\": \"HZ\",\r\n    \"email\": \"takoi@mail.ru\",\r\n    \"password\": \"123\",\r\n    \"phone\": \"88005553535\",\r\n    \"userStatus\": 1\r\n  },\r\n  {\r\n    \"id\":227,\r\n    \"username\": \"Lox1\",\r\n    \"firstName\": \"Chmo\",\r\n    \"lastName\": \"HZ\",\r\n    \"email\": \"takoi@mail.ru\",\r\n    \"password\": \"123\",\r\n    \"phone\": \"88005553535\",\r\n    \"userStatus\": 1\r\n  },\r\n  {\r\n    \"id\":229,\r\n    \"username\": \"Lox2\",\r\n    \"firstName\": \"Chmo\",\r\n    \"lastName\": \"HZ\",\r\n    \"email\": \"takoi@mail.ru\",\r\n    \"password\": \"123\",\r\n    \"phone\": \"88005553535\",\r\n    \"userStatus\": 1\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://petstore.swagger.io/v2/user/createWithList"
+			},
+			"response": []
+		},
+		{
+			"name": "getUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://petstore.swagger.io/v2/user/Lox"
+			},
+			"response": []
+		},
+		{
+			"name": "Update user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 228,\r\n  \"username\": \"NeLox\",\r\n  \"firstName\": \"NeChmo\",\r\n  \"lastName\": \"Znaem\",\r\n  \"email\": \"znaem@mail.ru\",\r\n  \"password\": \"1234\",\r\n  \"phone\": \"88005553535\",\r\n  \"userStatus\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://petstore.swagger.io/v2/user/Lox"
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "https://petstore.swagger.io/v2/user/Lox2"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "Lox",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "password",
+						"value": "123",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "https://petstore.swagger.io/v2/user/user?username=NeLox&password=1234",
+					"protocol": "https",
+					"host": [
+						"petstore",
+						"swagger",
+						"io"
+					],
+					"path": [
+						"v2",
+						"user",
+						"user"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "NeLox"
+						},
+						{
+							"key": "password",
+							"value": "1234"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://petstore.swagger.io/v2/user/logout"
+			},
+			"response": []
+		}
+	]
+}
