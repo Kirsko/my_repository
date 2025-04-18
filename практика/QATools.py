@@ -16,7 +16,7 @@ SPORT_CHECK_LIST = ['xpath', "//*[@id='hobbiesWrapper']/div[2]/div[1]/label"]
 READING_CHECK_LIST = ['xpath', "//*[@id='hobbiesWrapper']/div[2]/div[2]/label"]
 MUSIC_CHECK_LIST = ['xpath', "//*[@id='hobbiesWrapper']/div[2]/div[3]/label"]
 FILE_UPLOAD = ['xpath', '//input[@type="file"]']
-FILE_PICTURE = r'C:\Users\madee\AquaProjects\Selenium\практика\file\file.jpeg'
+FILE_PICTURE = r'/практика/my_repository/практика/file\file.jpeg'
 CURRENT_ADDRESS = ['xpath', '//*[@id="currentAddress"]']
 STATE= ['xpath', '//*[@id="state"]/div/div[1]/div[1]']
 STATE_LIST= ['xpath', '//*[@id="react-select-3-option-0"]']
@@ -24,6 +24,7 @@ CITY= ['xpath', "//*[@id='city']/div/div[1]/div[1]"]
 CITY_LIST= ['xpath', '//*[@id="react-select-4-option-0"]']
 BUTTON_CLICK = ['xpath', "//button[text()='Submit']"]
 
+# инициализация драйвера
 def initialize_driver():
     driver = webdriver.Chrome()
     action = ActionChains(driver)
@@ -33,18 +34,23 @@ def initialize_driver():
 def open_form_QA(driver):
     driver.get('https://demoqa.com/automation-practice-form')
 
+# запись теста в поле ввода
 def fill_text_field(wait, locator, text):
     wait.until(EC.visibility_of_element_located(locator)).send_keys(text)
 
+# клик элемента
 def click_element(wait, locator):
     wait.until(EC.visibility_of_element_located(locator)).click()
 
+# загрузка файла
 def upload_file(wait, locator, file_path):
     wait.until(EC.visibility_of_element_located(locator)).send_keys(file_path)
 
+# скролл по пикселям
 def scroll_page(driver, pixel):
     driver.execute_script(f"window.scrollBy(0, {pixel});")
 
+# ввод текста в поля ввода
 def fill_pesonal_info(wait):
     fill_text_field(wait, FIRST_NAME, 'Кирилл')
     fill_text_field(wait, LAST_NAME, 'Кириллов')
@@ -52,20 +58,24 @@ def fill_pesonal_info(wait):
     fill_text_field(wait, MOBILE, '7999999999')
     fill_text_field(wait, CURRENT_ADDRESS, FILE_PICTURE)
 
+# кликаем чек боксы
 def select_hobbi(wait):
     click_element(wait,SPORT_CHECK_LIST)
     click_element(wait,READING_CHECK_LIST)
     click_element(wait,MUSIC_CHECK_LIST)
 
+# кликаем поля со списками
 def select_state_and_city(wait):
     click_element(wait, STATE)
     click_element(wait, STATE_LIST)
     click_element(wait, CITY)
     click_element(wait, CITY_LIST)
 
+# кликаем кнопку
 def click_button(wait):
     click_element(wait, BUTTON_CLICK)
 
+# кликаем радиобаттон
 def gender_click(wait):
     click_element(wait, LABEL_GENDER)
 
